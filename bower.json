@@ -1,0 +1,26 @@
+{
+  "name": "opendataday-es-2015",
+  "version": "0.0.1",
+  "homepage": "https://github.com/claytonsilva/opendataday-es-2015",
+  "authors": [
+    "clayton@xdevel.com.br <clayton@xdevel.com.br>"
+  ],
+  "description": "dados abertos de governo (consumo de agua)",
+  "main": "index.html",
+  "keywords": [
+    "opendataday",
+    "xdevel"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
