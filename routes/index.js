@@ -153,7 +153,7 @@ function formatDataByFavorecido(list,top){
             for (var favorecido in l_g_favorecido ){
 
                 var reg_favorecido = {};
-                reg_favorecido.orgao = favorecido;
+                reg_favorecido.favorecido = favorecido;
                 reg_favorecido.valor_empenhado = sumValue_empenhado(l_g_favorecido[favorecido]);
                 reg_favorecido.valor_pago = sumValue_pago(l_g_favorecido[favorecido]);
                 reg_favorecido.periodos = toPeriodList(l_g_favorecido[favorecido]);
