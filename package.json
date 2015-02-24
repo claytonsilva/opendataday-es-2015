@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "bower install"
+    "postinstall": "bower cache clean && bower install"
   },
   "dependencies": {
     "body-parser": "~1.10.2",
