@@ -1,0 +1,772 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div id="main">
+    <div class="container col-md-12"  >
+        <div class="bs-callout bs-callout-navbar bs-callout-success" >
+            <h2><b>/api/despesas/orgao</b></h2>
+            <h3><b>Listagem Agrupando por Orgao / Favorecidos e Ações respectivamente</b></h3>
+            <h4><b>Parâmetros:</b></h4>
+            <p><b>ano(numérico):</b> ano da pesquisa [vazio lista todos os anos]</p>
+            <p><b>top(numérico):</b> filtra os n primeiros orgãos que mais gastaram por ano ou no ano filtrado [vazio lista todos]</p>
+            </br>
+            <p><b>Formato dos dados:</b> O exemplo abaixo mostra como vai ser exposto os dados</p>
+            <ul>
+                <li>
+                    <b>listagem de anos</b>
+                    <ul>
+                        <li><b>ano:</b> ano</li>
+                        <li><b>valor_empenhado:</b> somatório do ano</li>
+                        <li><b>valor_pago:</b> somatório do ano</li>
+                        <li><b>orgaos:</b> listagem de orgaos ordenado do maior gasto ao menor</li>
+                        <ul>
+                            <li><b>orgao:</b> nome do orgao</li>
+                            <li><b>valor_empenhado:</b> somatório do órgao</li>
+                            <li><b>valor_pago:</b> somatório do órgao</li>
+                            <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                            <ul>
+                                <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                <li><b>valor_pago:</b> somatório do periodo</li>
+                            </ul>
+                            <li><b>favorecidos:</b> listagem de favorecidos em ordem alfabética</li>
+                            <ul>
+                                <li><b>favorecido:</b> nome do favorecido</li>
+                                <li><b>valor_empenhado:</b> somatório do favorecido</li>
+                                <li><b>valor_pago:</b> somatório do favorecido</li>
+                                <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                                <ul>
+                                    <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                    <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                    <li><b>valor_pago:</b> somatório do periodo</li>
+                                </ul>
+                            </ul>
+                            <li><b>acoes:</b> listagem de ações(programas de governo) em ordem alfabética</li>
+                            <ul>
+                                <li><b>acao:</b> nome da ação</li>
+                                <li><b>valor_empenhado:</b> somatório da ação</li>
+                                <li><b>valor_pago:</b> somatório da ação</li>
+                                <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                                <ul>
+                                    <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                    <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                    <li><b>valor_pago:</b> somatório do periodo</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+            <pre>
+[
+    {
+        "ano": "2012",
+        "valor_empenhado": 0,
+        "valor_pago": 9553.42,
+        "orgaos": [
+            {
+                "orgao": "INSTITUTOS ESTADUAL DE MEIO AMBIENTE E RECURSOS HÍDRICOS ",
+                "valor_empenhado": 0,
+                "valor_pago": 7552,
+                "periodos": [
+                    {
+                        "datdocumento": "2012-02",
+                        "valor_empenhado": 0,
+                        "valor_pago": 1691.32
+                    },
+                    {
+                        "datdocumento": "2012-03",
+                        "valor_empenhado": 0,
+                        "valor_pago": 2497.78
+                    },
+                    {
+                        "datdocumento": "2012-04",
+                        "valor_empenhado": 0,
+                        "valor_pago": 262.47
+                    },
+                    {
+                        "datdocumento": "2012-06",
+                        "valor_empenhado": 0,
+                        "valor_pago": 0
+                    },
+                    {
+                        "datdocumento": "2012-08",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43
+                    }
+                ],
+                "favorecidos": [
+                    {
+                        "favorecido": "CESAN-COMP.ESP.SANTENSE DE SANEAMENTO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 4451.570000000001,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-02",
+                                "valor_empenhado": 0,
+                                "valor_pago": 1691.32
+                            },
+                            {
+                                "datdocumento": "2012-03",
+                                "valor_empenhado": 0,
+                                "valor_pago": 2497.78
+                            },
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 262.47
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            }
+                        ]
+                    },
+                    {
+                        "favorecido": "PORTO SEGURO - CIA. DE SEGUROS GERAIS",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-08",
+                                "valor_empenhado": 0,
+                                "valor_pago": 3100.43
+                            }
+                        ]
+                    }
+                ],
+                "acoes": [
+                    {
+                        "acao": "APOIO ADMINISTRATIVO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 7552,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-02",
+                                "valor_empenhado": 0,
+                                "valor_pago": 1691.32
+                            },
+                            {
+                                "datdocumento": "2012-03",
+                                "valor_empenhado": 0,
+                                "valor_pago": 2497.78
+                            },
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 262.47
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-08",
+                                "valor_empenhado": 0,
+                                "valor_pago": 3100.43
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+            </pre>
+        </div>
+        <div class="bs-callout bs-callout-navbar bs-callout-info" >
+            <h2><b>/api/despesas/favorecido</b></h2>
+            <h3><b>Listagem Agrupando por Favorecido / Orgaos e Ações respectivamente</b></h3>
+            <h4><b>Parâmetros:</b></h4>
+            <p><b>ano(numérico):</b> ano da pesquisa [vazio lista todos os anos]</p>
+            <p><b>top(numérico):</b> filtra os n primeiros favorecidos que mais gastaram por ano ou no ano filtrado [vazio lista todos]</p>
+            </br>
+            <p><b>Formato dos dados:</b> O exemplo abaixo mostra como vai ser exposto os dados</p>
+            <ul>
+                <li>
+                    <b>listagem de anos</b>
+                    <ul>
+                        <li><b>ano:</b> ano</li>
+                        <li><b>valor_empenhado:</b> somatório do ano</li>
+                        <li><b>valor_pago:</b> somatório do ano</li>
+                        <li><b>favorecidos:</b> listagem de favorecidos ordenado do maior gasto ao menor</li>
+                        <ul>
+                            <li><b>favorecido:</b> nome do favorecido</li>
+                            <li><b>valor_empenhado:</b> somatório do favorecido</li>
+                            <li><b>valor_pago:</b> somatório do favorecido</li>
+                            <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                            <ul>
+                                <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                <li><b>valor_pago:</b> somatório do periodo</li>
+                            </ul>
+
+
+
+                            <li><b>orgaos:</b> listagem de órgãos em ordem alfabética</li>
+                            <ul>
+                                <li><b>orgao:</b> nome do órgão</li>
+                                <li><b>valor_empenhado:</b> somatório do órgão</li>
+                                <li><b>valor_pago:</b> somatório do órgão</li>
+                                <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                                <ul>
+                                    <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                    <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                    <li><b>valor_pago:</b> somatório do periodo</li>
+                                </ul>
+                            </ul>
+                            <li><b>acoes:</b> listagem de ações(programas de governo) em ordem alfabética</li>
+                            <ul>
+                                <li><b>acao:</b> nome da ação</li>
+                                <li><b>valor_empenhado:</b> somatório da ação</li>
+                                <li><b>valor_pago:</b> somatório da ação</li>
+                                <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                                <ul>
+                                    <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                    <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                    <li><b>valor_pago:</b> somatório do periodo</li>
+                                </ul>
+                            </ul>
+                            
+                            
+                            
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+            <pre>
+ [
+    {
+        "ano": "2012",
+        "valor_empenhado": 0,
+        "valor_pago": 9553.42,
+        "favorecidos": [
+            {
+                "orgao": "CESAN-COMP.ESP.SANTENSE DE SANEAMENTO",
+                "valor_empenhado": 0,
+                "valor_pago": 6452.990000000001,
+                "periodos": [
+                    {
+                        "datdocumento": "2012-01",
+                        "valor_empenhado": 0,
+                        "valor_pago": 0
+                    },
+                    {
+                        "datdocumento": "2012-02",
+                        "valor_empenhado": 0,
+                        "valor_pago": 1691.32
+                    },
+                    {
+                        "datdocumento": "2012-03",
+                        "valor_empenhado": 0,
+                        "valor_pago": 2497.78
+                    },
+                    {
+                        "datdocumento": "2012-04",
+                        "valor_empenhado": 0,
+                        "valor_pago": 1035.4
+                    },
+                    {
+                        "datdocumento": "2012-06",
+                        "valor_empenhado": 0,
+                        "valor_pago": 0
+                    },
+                    {
+                        "datdocumento": "2012-07",
+                        "valor_empenhado": 0,
+                        "valor_pago": 222.04000000000002
+                    },
+                    {
+                        "datdocumento": "2012-10",
+                        "valor_empenhado": 0,
+                        "valor_pago": 663.85
+                    },
+                    {
+                        "datdocumento": "2012-11",
+                        "valor_empenhado": 0,
+                        "valor_pago": 342.6
+                    }
+                ],
+                "orgaos": [
+                    {
+                        "orgao": "RÁDIO E TELEVISÃO ESPÍRITO SANTO ",
+                        "valor_empenhado": 0,
+                        "valor_pago": 1228.4900000000002,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-01",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-07",
+                                "valor_empenhado": 0,
+                                "valor_pago": 222.04000000000002
+                            },
+                            {
+                                "datdocumento": "2012-10",
+                                "valor_empenhado": 0,
+                                "valor_pago": 663.85
+                            },
+                            {
+                                "datdocumento": "2012-11",
+                                "valor_empenhado": 0,
+                                "valor_pago": 342.6
+                            }
+                        ]
+                    },
+                    {
+                        "orgao": "INSTITUTOS ESTADUAL DE MEIO AMBIENTE E RECURSOS HÍDRICOS ",
+                        "valor_empenhado": 0,
+                        "valor_pago": 4451.570000000001,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-02",
+                                "valor_empenhado": 0,
+                                "valor_pago": 1691.32
+                            },
+                            {
+                                "datdocumento": "2012-03",
+                                "valor_empenhado": 0,
+                                "valor_pago": 2497.78
+                            },
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 262.47
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            }
+                        ]
+                    },
+                    {
+                        "orgao": "INSTITUTO DE PESOS E MEDIDAS DO ESTADO DO ESPÍRITO SANTO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 772.93,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 772.93
+                            }
+                        ]
+                    }
+                ],
+                "acoes": [
+                    {
+                        "acao": "APOIO ADMINISTRATIVO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 5680.06,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-01",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-02",
+                                "valor_empenhado": 0,
+                                "valor_pago": 1691.32
+                            },
+                            {
+                                "datdocumento": "2012-03",
+                                "valor_empenhado": 0,
+                                "valor_pago": 2497.78
+                            },
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 262.47
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-07",
+                                "valor_empenhado": 0,
+                                "valor_pago": 222.04000000000002
+                            },
+                            {
+                                "datdocumento": "2012-10",
+                                "valor_empenhado": 0,
+                                "valor_pago": 663.85
+                            },
+                            {
+                                "datdocumento": "2012-11",
+                                "valor_empenhado": 0,
+                                "valor_pago": 342.6
+                            }
+                        ]
+                    },
+                    {
+                        "acao": "DESENVOLVIMENTO DE ATIVIDADES METROLOGICAS",
+                        "valor_empenhado": 0,
+                        "valor_pago": 772.93,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 772.93
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "orgao": "PORTO SEGURO - CIA. DE SEGUROS GERAIS",
+                "valor_empenhado": 0,
+                "valor_pago": 3100.43,
+                "periodos": [
+                    {
+                        "datdocumento": "2012-08",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43
+                    }
+                ],
+                "orgaos": [
+                    {
+                        "orgao": "INSTITUTOS ESTADUAL DE MEIO AMBIENTE E RECURSOS HÍDRICOS ",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-08",
+                                "valor_empenhado": 0,
+                                "valor_pago": 3100.43
+                            }
+                        ]
+                    }
+                ],
+                "acoes": [
+                    {
+                        "acao": "APOIO ADMINISTRATIVO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-08",
+                                "valor_empenhado": 0,
+                                "valor_pago": 3100.43
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+            </pre>
+        </div>
+        <div class="bs-callout bs-callout-navbar bs-callout-warning" >
+            <h2><b>/api/despesas/acao</b></h2>
+            <h3><b>Listagem Agrupando por Ações / Orgaos e Favorecidos respectivamente</b></h3>
+            <h4><b>Parâmetros:</b></h4>
+            <p><b>ano(numérico):</b> ano da pesquisa [vazio lista todos os anos]</p>
+            <p><b>top(numérico):</b> filtra os n primeiras ações que mais gastaram por ano ou no ano filtrado [vazio lista todos]</p>
+            </br>
+            <p><b>Formato dos dados:</b> O exemplo abaixo mostra como vai ser exposto os dados</p>
+            <ul>
+                <li>
+                    <b>listagem de anos</b>
+                    <ul>
+                        <li><b>ano:</b> ano</li>
+                        <li><b>valor_empenhado:</b> somatório do ano</li>
+                        <li><b>valor_pago:</b> somatório do ano</li>
+                        <li><b>acoes:</b> listagem de ações(programas de governo) ordenado do maior gasto ao menor</li>
+                        <ul>
+                            <li><b>acao:</b> nome da ação</li>
+                            <li><b>valor_empenhado:</b> somatório da ação</li>
+                            <li><b>valor_pago:</b> somatório da ação</li>
+                            <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                            <ul>
+                                <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                <li><b>valor_pago:</b> somatório do periodo</li>
+                            </ul>
+
+
+
+                            <li><b>orgaos:</b> listagem de órgãos em ordem alfabética</li>
+                            <ul>
+                                <li><b>orgao:</b> nome do órgão</li>
+                                <li><b>valor_empenhado:</b> somatório do órgão</li>
+                                <li><b>valor_pago:</b> somatório do órgão</li>
+                                <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                                <ul>
+                                    <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                    <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                    <li><b>valor_pago:</b> somatório do periodo</li>
+                                </ul>
+                            </ul>
+                            <li><b>favorecidos:</b> listagem de favorecidos em ordem alfabética</li>
+                            <ul>
+                                <li><b>favorecido:</b> nome do favorecido</li>
+                                <li><b>valor_empenhado:</b> somatório do favorecido</li>
+                                <li><b>valor_pago:</b> somatório do favorecido</li>
+                                <li><b>periodos:</b> listagem de periodos ordenado por data</li>
+                                <ul>
+                                    <li><b>datDocumento:</b> data do documento (formato "MM YYYY")</li>
+                                    <li><b>valor_empenhado:</b> somatório do periodo</li>
+                                    <li><b>valor_pago:</b> somatório do periodo</li>
+                                </ul>
+                            </ul>
+
+
+
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+            <pre>
+[
+    {
+        "ano": "2012",
+        "valor_empenhado": 0,
+        "valor_pago": 9553.42,
+        "acoes": [
+            {
+                "acao": "APOIO ADMINISTRATIVO",
+                "valor_empenhado": 0,
+                "valor_pago": 8780.49,
+                "periodos": [
+                    {
+                        "datdocumento": "2012-01",
+                        "valor_empenhado": 0,
+                        "valor_pago": 0
+                    },
+                    {
+                        "datdocumento": "2012-02",
+                        "valor_empenhado": 0,
+                        "valor_pago": 1691.32
+                    },
+                    {
+                        "datdocumento": "2012-03",
+                        "valor_empenhado": 0,
+                        "valor_pago": 2497.78
+                    },
+                    {
+                        "datdocumento": "2012-04",
+                        "valor_empenhado": 0,
+                        "valor_pago": 262.47
+                    },
+                    {
+                        "datdocumento": "2012-06",
+                        "valor_empenhado": 0,
+                        "valor_pago": 0
+                    },
+                    {
+                        "datdocumento": "2012-07",
+                        "valor_empenhado": 0,
+                        "valor_pago": 222.04000000000002
+                    },
+                    {
+                        "datdocumento": "2012-08",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43
+                    },
+                    {
+                        "datdocumento": "2012-10",
+                        "valor_empenhado": 0,
+                        "valor_pago": 663.85
+                    },
+                    {
+                        "datdocumento": "2012-11",
+                        "valor_empenhado": 0,
+                        "valor_pago": 342.6
+                    }
+                ],
+                "orgaos": [
+                    {
+                        "orgao": "RÁDIO E TELEVISÃO ESPÍRITO SANTO ",
+                        "valor_empenhado": 0,
+                        "valor_pago": 1228.4900000000002,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-01",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-07",
+                                "valor_empenhado": 0,
+                                "valor_pago": 222.04000000000002
+                            },
+                            {
+                                "datdocumento": "2012-10",
+                                "valor_empenhado": 0,
+                                "valor_pago": 663.85
+                            },
+                            {
+                                "datdocumento": "2012-11",
+                                "valor_empenhado": 0,
+                                "valor_pago": 342.6
+                            }
+                        ]
+                    },
+                    {
+                        "orgao": "INSTITUTOS ESTADUAL DE MEIO AMBIENTE E RECURSOS HÍDRICOS ",
+                        "valor_empenhado": 0,
+                        "valor_pago": 7552,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-02",
+                                "valor_empenhado": 0,
+                                "valor_pago": 1691.32
+                            },
+                            {
+                                "datdocumento": "2012-03",
+                                "valor_empenhado": 0,
+                                "valor_pago": 2497.78
+                            },
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 262.47
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-08",
+                                "valor_empenhado": 0,
+                                "valor_pago": 3100.43
+                            }
+                        ]
+                    }
+                ],
+                "favorecidos": [
+                    {
+                        "favorecido": "CESAN-COMP.ESP.SANTENSE DE SANEAMENTO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 5680.06,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-01",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-02",
+                                "valor_empenhado": 0,
+                                "valor_pago": 1691.32
+                            },
+                            {
+                                "datdocumento": "2012-03",
+                                "valor_empenhado": 0,
+                                "valor_pago": 2497.78
+                            },
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 262.47
+                            },
+                            {
+                                "datdocumento": "2012-06",
+                                "valor_empenhado": 0,
+                                "valor_pago": 0
+                            },
+                            {
+                                "datdocumento": "2012-07",
+                                "valor_empenhado": 0,
+                                "valor_pago": 222.04000000000002
+                            },
+                            {
+                                "datdocumento": "2012-10",
+                                "valor_empenhado": 0,
+                                "valor_pago": 663.85
+                            },
+                            {
+                                "datdocumento": "2012-11",
+                                "valor_empenhado": 0,
+                                "valor_pago": 342.6
+                            }
+                        ]
+                    },
+                    {
+                        "favorecido": "PORTO SEGURO - CIA. DE SEGUROS GERAIS",
+                        "valor_empenhado": 0,
+                        "valor_pago": 3100.43,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-08",
+                                "valor_empenhado": 0,
+                                "valor_pago": 3100.43
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "acao": "DESENVOLVIMENTO DE ATIVIDADES METROLOGICAS",
+                "valor_empenhado": 0,
+                "valor_pago": 772.93,
+                "periodos": [
+                    {
+                        "datdocumento": "2012-04",
+                        "valor_empenhado": 0,
+                        "valor_pago": 772.93
+                    }
+                ],
+                "orgaos": [
+                    {
+                        "orgao": "INSTITUTO DE PESOS E MEDIDAS DO ESTADO DO ESPÍRITO SANTO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 772.93,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 772.93
+                            }
+                        ]
+                    }
+                ],
+                "favorecidos": [
+                    {
+                        "favorecido": "CESAN-COMP.ESP.SANTENSE DE SANEAMENTO",
+                        "valor_empenhado": 0,
+                        "valor_pago": 772.93,
+                        "periodos": [
+                            {
+                                "datdocumento": "2012-04",
+                                "valor_empenhado": 0,
+                                "valor_pago": 772.93
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+            </pre>
+        </div>
+    </div>
+</div>
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
