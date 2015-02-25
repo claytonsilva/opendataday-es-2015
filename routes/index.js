@@ -311,10 +311,10 @@ router.get('/api/despesas/orgao', function(req, res, next) {
     }else if  (year == '2014'){
         res.json(formatDataByOrgao(data_2014,top));
     }
-    else if  (year == '2015'){
-        res.json(formatDataByOrgao(data_2015,top));
-    } else{
+    else if  (!year){
         res.json(formatDataByOrgao(data_total,top));
+    } else{
+        res.json({"msg" : "Ano não disponível"});
     }
 });
 
