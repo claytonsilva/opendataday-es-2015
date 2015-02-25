@@ -77,7 +77,7 @@ function formatDataByOrgao(list,top){
             for (var orgao in l_g_orgao ){
 
                 var reg_orgao = {};
-                reg_orgao.orgao = orgao;
+                reg_orgao.orgao = orgao.trim();
                 reg_orgao.valor_empenhado = sumValue_empenhado(l_g_orgao[orgao]);
                 reg_orgao.valor_pago = sumValue_pago(l_g_orgao[orgao]);
                 reg_orgao.periodos = toPeriodList(l_g_orgao[orgao]);
@@ -89,7 +89,7 @@ function formatDataByOrgao(list,top){
                     var xreturn_favorecido = [];
                     for (var favorecido in l_g_favorecido){
                         var reg_favorecido = {};
-                        reg_favorecido.favorecido = favorecido;
+                        reg_favorecido.favorecido = favorecido.trim();
                         reg_favorecido.valor_empenhado = sumValue_empenhado(l_g_favorecido[favorecido]);
                         reg_favorecido.valor_pago = sumValue_pago(l_g_favorecido[favorecido]);
                         reg_favorecido.periodos = toPeriodList(l_g_favorecido[favorecido]);
@@ -105,7 +105,7 @@ function formatDataByOrgao(list,top){
                     var xreturn_acao = [];
                     for (var acao in l_g_acao){
                         var reg_acao = {};
-                        reg_acao.acao = acao;
+                        reg_acao.acao = acao.trim();
                         reg_acao.valor_empenhado = sumValue_empenhado(l_g_acao[acao]);
                         reg_acao.valor_pago = sumValue_pago(l_g_acao[acao]);
                         reg_acao.periodos = toPeriodList(l_g_acao[acao]);
@@ -152,7 +152,7 @@ function formatDataByFavorecido(list,top){
             for (var favorecido in l_g_favorecido ){
 
                 var reg_favorecido = {};
-                reg_favorecido.favorecido = favorecido;
+                reg_favorecido.favorecido = favorecido.trim();
                 reg_favorecido.valor_empenhado = sumValue_empenhado(l_g_favorecido[favorecido]);
                 reg_favorecido.valor_pago = sumValue_pago(l_g_favorecido[favorecido]);
                 reg_favorecido.periodos = toPeriodList(l_g_favorecido[favorecido]);
@@ -165,7 +165,7 @@ function formatDataByFavorecido(list,top){
                     var xreturn_orgao = [];
                     for (var orgao in l_g_orgao){
                         var reg_orgao = {};
-                        reg_orgao.orgao = orgao;
+                        reg_orgao.orgao = orgao.trim();
                         reg_orgao.valor_empenhado = sumValue_empenhado(l_g_orgao[orgao]);
                         reg_orgao.valor_pago = sumValue_pago(l_g_orgao[orgao]);
                         reg_orgao.periodos = toPeriodList(l_g_orgao[orgao]);
@@ -181,7 +181,7 @@ function formatDataByFavorecido(list,top){
                     var xreturn_acao = [];
                     for (var acao in l_g_acao){
                         var reg_acao = {};
-                        reg_acao.acao = acao;
+                        reg_acao.acao = acao.trim();
                         reg_acao.valor_empenhado = sumValue_empenhado(l_g_acao[acao]);
                         reg_acao.valor_pago = sumValue_pago(l_g_acao[acao]);
                         reg_acao.periodos = toPeriodList(l_g_acao[acao]);
@@ -232,7 +232,7 @@ function formatDataByAcao(list,top){
             for (var acao in l_g_acao ){
 
                 var reg_acao = {};
-                reg_acao.acao = acao;
+                reg_acao.acao = acao.trim();
                 reg_acao.valor_empenhado = sumValue_empenhado(l_g_acao[acao]);
                 reg_acao.valor_pago = sumValue_pago(l_g_acao[acao]);
                 reg_acao.periodos = toPeriodList(l_g_acao[acao]);
@@ -245,7 +245,7 @@ function formatDataByAcao(list,top){
                     var xreturn_orgao = [];
                     for (var orgao in l_g_orgao){
                         var reg_orgao = {};
-                        reg_orgao.orgao = orgao;
+                        reg_orgao.orgao = orgao.trim();
                         reg_orgao.valor_empenhado = sumValue_empenhado(l_g_orgao[orgao]);
                         reg_orgao.valor_pago = sumValue_pago(l_g_orgao[orgao]);
                         reg_orgao.periodos = toPeriodList(l_g_orgao[orgao]);
@@ -261,7 +261,7 @@ function formatDataByAcao(list,top){
                     var xreturn_favorecido = [];
                     for (var favorecido in l_g_favorecido){
                         var reg_favorecido = {};
-                        reg_favorecido.favorecido = favorecido;
+                        reg_favorecido.favorecido = favorecido.trim();
                         reg_favorecido.valor_empenhado = sumValue_empenhado(l_g_favorecido[favorecido]);
                         reg_favorecido.valor_pago = sumValue_pago(l_g_favorecido[favorecido]);
                         reg_favorecido.periodos = toPeriodList(l_g_favorecido[favorecido]);
