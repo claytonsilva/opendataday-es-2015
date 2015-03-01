@@ -303,6 +303,7 @@ function formatDataByAcao(list,top){
 router.get('/api/despesas/orgao', function(req, res, next) {
     var year = req.param('ano');
     var top = req.param('top');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
     
     if  (year == '2012'){
         res.json(formatDataByOrgao(data_2012,top));
@@ -322,6 +323,7 @@ router.get('/api/despesas/orgao', function(req, res, next) {
 router.get('/api/despesas/favorecido', function(req, res, next) {
     var year = req.param('ano');
     var top = req.param('top');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
 
     if  (year == '2012'){
         res.json(formatDataByFavorecido(data_2012,top));
@@ -341,6 +343,7 @@ router.get('/api/despesas/favorecido', function(req, res, next) {
 router.get('/api/despesas/acao', function(req, res, next) {
     var year = req.param('ano');
     var top = req.param('top');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
 
     if  (year == '2012'){
         res.json(formatDataByAcao(data_2012,top));
